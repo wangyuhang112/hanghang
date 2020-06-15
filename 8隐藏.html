@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 定义动画 动画名字 ani  */
+      @keyframes ani {
+        /* 0% */
+        from {
+          opacity: 1;
+        }
+        /* 100% */
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes bgc {
+        0% {
+          background-color: khaki;
+        }
+        15% {
+          background-color: darkgoldenrod;
+        }
+        20% {
+          background-color: blue;
+        }
+        30% {
+          background-color: blueviolet;
+        }
+        40% {
+          background-color: darkorange;
+        }
+        50% {
+          background-color: red;
+        }
+        60% {
+          background-color: sienna;
+        }
+        80% {
+          background-color: aqua;
+        }
+        100%{
+          background-color: red;
+        }
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* display: none; */
+        /* visibility: hidden; */
+        /* 使用动画 */
+        /* animation: bgc 0.5s ease-in; */
+      }
+      .wrap {
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        opacity: 0;
+        /* background-color: burlywood; */
+        /* 执行 定义的bac动画 */
+        animation-name: ani;
+        /* 执行时间2s */
+        animation-duration: 3s;
+        /* 执行速度 匀速 */
+        animation-timing-function: linear;
+        /* 执行次数 无限次 */
+        /* animation-iteration-count: infinite; */
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+         设置一个元素隐藏有几种
+         非动画： display:none  visibility:hidden
+         问题： 区别是什么?   不占据位置 占据位置
+
+         有动画的：
+         1：高度为0 overFlow:hidden
+         2: 3D 旋转 90 度 
+         3：缩放到0
+         4: 透明度 
+     -->
+    <!-- 
+         动画 1 定义 2 使用 
+      -->
+    <div class="box"></div>
+    <div class="wrap"></div>
+  </body>
+</html>

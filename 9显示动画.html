@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* 遮罩层 实现  */
+            position: fixed;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            /* 坑 */
+            /* opacity: 0.3; */
+        }
+        /*  高度 0   overflow:hidden 实现显示动画  */
+        @keyframes show {
+            from{
+                height: 0px;
+            }
+            to{
+                height: 60px;
+            }
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        a{
+            display: inline-block;
+            padding: 15px;
+            color: red;
+        }
+        ul{
+            background-color: #000000;
+            height: 60px;
+            display: flex;
+            padding-left: 20px;
+            align-items: center;
+            animation: show 3s linear;
+            overflow: hidden;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 
+            透明度  0-1
+            1 为显示 0 为隐藏 可以继承  
+            注意：写蒙版不会使用透明度：用 渐变  
+            用途：动画上
+             */
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        .box:hover{
+            opacity: 0;
+            /* all 可以查看所有属性的变化过程 */
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        动画：
+        1：分析动画初始化是什么样子
+        2：结束时候什么样？
+        3：最后分析 过成是什么
+
+        过度：可以看到 一个属性值变化的【过程】
+        transition: 属性 过度事件;
+
+     -->
+    <nav>
+        <ul>
+            <li><a href="#">列表01</a></li>
+            <li><a href="#">列表02</a></li>
+            <li><a href="#">列表03</a></li>
+            <li><a href="#">列表04</a></li>
+            <li><a href="#">列表05</a></li>
+            <li><a href="#">列表06</a></li>
+        </ul>
+    </nav>
+
+    <div class="box"></div>
+</body>
+</html>
