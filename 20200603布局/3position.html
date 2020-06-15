@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wraper{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000000;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            /* 
+            相对定位：
+            相对自身位置进行定位
+            不脱离文档流  只适合用于【微调】 元素本质没变
+             */
+            position: relative;
+            left: 200px;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+            /* 
+            绝对定位：
+            相对最近的祖籍元素中；具有position属性 且值部位static 的元素 进行定位
+            定位后脱离文档流，原来位置被其他元素所占据
+            元素display 值 变为 inline-block 
+
+            一个没有高度的容器；高度是由子元素和 内边距撑起来的；
+            脱离文档流----> 父元素的容器高度变小
+             */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .control{
+            width: 50px;
+            height: 50px;
+            background-color: coral;
+            /* 
+            固定定位：
+            相对浏览器视图窗口定位；
+            定位后 脱离文档流 元素display 变为inline-block 
+             */
+            position: fixed;
+            right: 10px;
+            bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wraper">
+        <div class="box"></div>
+        <div class="one"></div>
+    </div>
+    <div class="control"></div>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+    <p>dlajfsdlkfdfasd</p>
+</body>
+</html>

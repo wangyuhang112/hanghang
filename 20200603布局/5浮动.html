@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wraper {
+        width: 300px;
+        /* height: 350px; */
+        background-color: darkgoldenrod;
+      }
+      .size {
+        width: 110px;
+        height: 100px;
+        float: left;
+      }
+      .one {
+        background-color: cyan;
+        /* float: right; */
+      }
+      .two {
+        background-color: darkorchid;
+        /* float: right; */
+      }
+      .three {
+        background-color: blue;
+        /* float: right; */
+      }
+      .clearfix{
+          clear: both;
+      }
+      /* 推荐使用 */
+      .clearFloat {
+        zoom: 1;
+      }
+      .clearFloat::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        浮动：
+        元素display 值变为 ibline-block
+        移动范围为 父容器
+        浮动后脱离文档流
+        浮动后占据浮动元素位置 
+
+        清楚浮动： 可以让元素不脱离文档流；
+        方式一：在最后一个浮动元素后夹 空元素 clear:both
+        方式二：父元素 overFlow：hidden
+        方式三（推荐） : 创建BFC 
+     -->
+    <div class="wraper clearFloat">
+      <div class="one size ">ONE</div>
+      <!-- <div class="clearfix"></div> -->
+      <div class="two size">TWO</div>
+      <div class="three size">THREE</div>
+    </div>
+    <div class="wraper" style="height: 300px;background-color: red;"></div>
+  </body>
+</html>
