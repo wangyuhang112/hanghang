@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // && 运算符  运算规律
+        1// 从左往右 一次计算  第一个是true 进行下一个 ：知道遇到第一个false 返回false 如果所有的都是true  则返回最后一个表达式的运算结果 或者直接返回数据
+        
+    //     && 运算符的 运算顾虑
+    //    1；从左往右依次运算，第一个是true  进行下一个；遇到第一个false 时候；返回false 
+    //       如果一直都没有false； 最后一个是表达式；返回 表达式运算结果；
+    //       左后一个如果是js 数据直接返回数据
+
+
+        // var res = [] === '' &&(1+2)*1 && 'a'>'b'
+        // var res = [] === '' && 3*1 &&  'a'>'b'
+        // var res = false && 3 &&  'a'>'b'
+        
+        // var res = {} &&'qer'
+        // var res = 'qer' && {}  
+        var a = 20 
+        var res = (a % 4 == 0 && a % 100 != 0 ) && a % 400 == 0
+
+        // var res = ( )&& a % 400 == 0
+        console.log(res)
+
+
+             //   var a = 20;
+      //   var res = (a % 4 == 0 && a % 100 != 0)&& a % 400 == 0;
+      //       res = (0 == 0 && 20 % 100 != 0)&& 20 % 400 == 0;
+      //       res = (true && 20 % 100 != 0)&& 20 % 400 == 0;
+      //       res = (true && 20 != 0)&& 20 % 400 == 0;
+      //       res = (true && true)&& 20 % 400 == 0;
+      //       res = true && 20 % 400 == 0;
+      //       res = true && 20 == 0;
+      //       res = true && false;
+      //       res = false
+
+
+      //  从左往右一次计算  第一个是false  进行下一个 遇到第一个true 返回false
+      //如果一直没有true 最后一个是表达式 返回 表达式运算结果  最后如果是js 数据直接返回数据；
+        var a = 20
+        var res =  (a % 4 == 0 || a % 100 != 0) || a % 400 == 0;
+            res =  (20 % 4 == 0 || 20 % 100 != 0) || 20 % 400 == 0;
+            res =  (true == 0 || 20 % 100 != 0) || 20 % 400 == 0;
+            res =  (true || 20% 100 != 0) || 20 % 400 == 0;
+            res =  (true) || 20 % 400 == 0;
+            res =  true || 20 % 400 == 0;
+            res = true
+
+
+
+             // var res = undefined || null  // null 
+        // var res  = null || false  // false
+        // var res = false || '' //  ''
+        // var res = '' || 0  // 0
+
+        var res = undefined || null || false || '' || 0;      
+            res =   null || false || '' || 0 ;
+            res =   false || '' || 0 ;
+            res =    '' || 0 ;
+            res =     0 ;
+            console.log(res1)
+
+        // ！ 直接两个结果 true false
+        // 数据类型的隐式转化 也应该转为boolean
+         // 第一步：看是不是 !
+        // 第二步：将操作数转为布尔类型
+        // 第三步：取反
+         var res1 = 1+2+!0
+            //  res1 = 3+true 
+            //  res1 = 3+1 
+            //  res1 = 4
+                      
+         var res2 = !1
+            //  res2 = !true
+            //  res2 = false
+
+         var res3 = !'fff'
+            //  res3 = !true
+            //  res3 = false
+
+         var res4 = !null
+            //  res4 = !false
+            //  res4 = true
+
+         var res5 = !undefined
+            //  res5 = !false
+            //  res5 = true
+
+         var res6 = !''
+            //  res6 = !false
+            //  res6 = true
+
+         var res7 = !NaN
+            //  res7 = !false
+            //  res7 = true
+
+         var res8 = 2-!'ddd'
+            //  res8 = 2-!true
+            //  res8 = 2-false
+            //  res8 = 2-0
+            //  res8 = 2
+
+         console.log(res1)
+         console.log(res2)
+         console.log(res3)
+         console.log(res4)
+         console.log(res5)
+         console.log(res6)
+         console.log(res7)
+         console.log(res8)
+         var res8 = {}>[] && 2>1 || 'dd'>'aa' || !''
+
+        // res8 = '[ObjectObject]'>'' && 2>1 || 'dd'>'aa' || !''
+        // res8 = true && 2>1 || 'dd'>'aa' || !''
+        // res8 = true && true || 'dd'>'aa' || !
+        // res8 = true || 'dd'>'aa' || !''
+        // res8 = true
+       
+       var res9 = ('aa'>'')&&!(1<2||1-1&&[]>{})&&(''==[])
+       var res9 = true&&!(1<2||1-1&&[]>{})&&true
+       var res9 = true&&!(true||false&&false)&&true
+       var res9 = true&&!(true||false)&&true
+       var res9 = true&&!true&&true
+       var res9 = true&&false&&true
+       var res9 = false
+    console.log(res9)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 数据类型间是可以相互转换的 显示隐式
+        // bool 转number
+        // 显示转化 Number() parseInt() parseFloat()
+        //api接受什么参数 api的作用的是什么
+        //浮点数之间不能进行运算
+        //不要测试某个浮点数 （数学）运算结果
+        
+        console.log(0xf)
+        //不论是二进制还是其他进制数 最后展示的都是十进制的树
+
+        //Number（）作用：将其他类型的数据转化为数值型 并返回转化结果
+        //-->参数为js 数据 不传 参默认返回0
+        var res = Number('yuhang') //res 接受Number的返回结果
+        console.log(res)   //NaN
+        console.log(Number(''))   //0
+
+        //NaN 不是一个数值型     其他数据转换数值型 没有匹配数组 那么就是NaN
+        // 任何跟NAN  算数运算都是NAN
+        //任何数过跟他比较 都是false
+        //NAN 不等于NAN
+        // 数据转换为NAN后的运算情况
+        console.log(1+NaN)
+        //字符串装number
+        //''---0 飞控非数值字符---NaN
+        //纯数组字符  ---- 数字
+        //进制字符  -  最终输出十进制
+
+        
+          </script>
+</body>
+</html>

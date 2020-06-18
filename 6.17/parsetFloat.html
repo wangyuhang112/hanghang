@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // pasertFloat()  将其他类型数据转化为浮点型
+        console.log(parseFloat('11.222.32'))  //第二个小数点无效
+        console.log(parseFloat('00012121'))
+        console.log(parseFloat('000dasds23'))
+        console.log(parseFloat('0xA')) //十六进制就为0
+        console.log(parseFloat(''))  //空字符装为nan
+        console.log(parseFloat('5yuhang'))  
+        // 5   从第一个开始 找到第一个非数字字符 不解析  返回解析完为5
+    </script>
+</body>
+</html>
