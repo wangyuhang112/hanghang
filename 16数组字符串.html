@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['宇航','航航','航航航']
+
+        //将数组变成字符
+        var res = arr.toString();
+        console.log(arr)
+        console.log(res)
+
+
+        ////将数组变成字符串 join
+        //arr.join()将数组变为字符串
+        //----》参数为替换',' 字符的内容
+        //注意 参数只能替换为一堆数组中字符
+        var arr1 = ['a','b',3,[1,2]];
+        var res2 = arr1.join('');
+        console.log(res2,'--------')
+
+        //将res字符串变成数组  newArr
+        //split() 将字符串进行切割 并且返回数组
+        //参数为u被切割的字符
+        var newArr = res.split(',');
+        newArr[1] = '6666'
+        console.log(newArr)
+
+        var str1 = '4546546+5465+4654sdf'
+        var res1 = str1.split('+')
+        console.log(res1)
+    </script>
+</body>
+</html>

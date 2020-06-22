@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var count = 0;
+        // var num = 0;
+        // for(var i = 0; i <9; i++){
+        //     console.log('i',i)
+        //     num++
+        //     for(var j = 0;j<9;j++){
+        //           // 如何统计里面for 执行的次数
+        //           ++count;
+        //     }
+        // }
+        // console.log(count)
+        // console.log(num)
+
+        //上面的逻辑 处理的数据结构
+        //动态获取多维数据
+        // 二维数组
+        // 1: 第一步：先获取一维数组下的数据
+        var arr = [
+            ['aa','111'],
+            ['aa','111'],
+            ['aa','111','666'],
+            ['aa','111'],
+        ]
+        for(var i = 0; i < arr.length;i++){
+            console.log(arr[i])
+            if( arr[i].length == 3){
+                for( var j = 0; j<arr[i].length;j++){
+                console.log(arr[i][j])
+            }
+            
+            }
+        }
+        ////1.知道循环多少次
+        //2.结果多少个;只要比执行次数少,就一定用到了if
+    </script>
+</body>
+</html>
