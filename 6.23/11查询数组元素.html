@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //如何判断某个数组中是否含有某个元素
+        var arr = ['22',1223,true];
+        // 方式一 遍历+if
+        for(var i = 0,len=arr.length;i<len;i++){
+            if(arr[i]=='22'){
+                ///找到数据后 做其他业务
+                alert('dd')
+                break
+            }
+        }
+
+        //方式二
+        //arr.indexOf(item)  返回数组元素的索引值 如果为-1 证明数组中没有这个元素
+        var res = arr.indexOf('宇航')
+        if(res!=-1){
+            alert('dd')
+        }
+        console.log(res)
+    </script>
+</body>
+</html>

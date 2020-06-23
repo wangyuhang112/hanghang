@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //反常规思路
+        var arr = [1,2,3,4]
+        var arr1 = ['2','da']
+        var res = ['d','d']
+        //concat() 合并数组并返回合并后是结果
+        //将以上 arr arr1 res 数组全部合并带arr
+        // 注意 arr 数组长度变化了   是合并三个长度和
+        // arr = arr.concat(arr1)
+        // arr = arr.concat(res)
+        console.log(arr)
+
+        //颠倒数组
+        var recerseArr = arr.reverse()
+        console.log(recerseArr)
+
+        var arr8 = [1,2,'ffghfghfg',5,6,4,4,8,9,7]
+        // arr.slice(startIndex.endIndex)返回数组片段
+        //参一  从哪个索引值开始
+        //参二 到哪个索引值结束 包含startIndex 不包含endIndex
+        var res8 = arr8.slice(8,9)
+        console.log(res8)
+    </script>
+</body>
+</html>

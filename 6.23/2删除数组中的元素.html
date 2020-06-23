@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,4,55]
+        ///pop 从尾部删除   长度减一
+        arr.pop()
+        // console.log(arr)
+         var res1 =  arr.pop()
+         console.log(res1)
+        //shift()  从头删除 长度减一 返回被删除的元素
+        
+        var res = arr.shift();
+        console.log(arr,res)
+        // 注意 关于删除数组元素
+        //1.长度是变化 for 选中会有2个变化的量
+        //2.不能删除干净 i递增 长度递减
+        //下面为错误代码
+        // for(var i = 0 ;i<=arr1.length;i++){
+        //     arr1.pop()
+        //     console.log(++count)
+        //     console.log(arr1)
+        // 
+      
+            var arr2 = [1,2,3,4,5,6,7,8,9]
+        for(var a = arr2.length;a>0;a--){
+            arr2.pop()
+            console.log(arr2)
+        }
+        
+ 
+
+    </script>
+</body>
+</html>

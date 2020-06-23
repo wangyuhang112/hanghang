@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [
+            {name:'dd',age:23},
+            {name:'dd',age:24},
+            {name:'dd',age:25},
+            {name:'dd',age:26},
+            {name:'dd',age:27},
+        ]
+        //在页面中展示的是age>33的数据
+        var res = [];
+        for(var i = 0;i<arr.length; i++){
+            if(arr[i].age>33)
+            res.push(arr[i])
+        }
+
+
+
+
+
+        //方式二
+        // filter（）过滤  返回过滤后的新数组
+        var res = arr.filter(function(item,index){
+
+
+         
+        })
+
+    </script>
+</body>
+</html>
