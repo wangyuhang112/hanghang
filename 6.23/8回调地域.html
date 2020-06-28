@@ -22,17 +22,17 @@
         // })
 
 
-    //     function foo(callBack1){
-    //     console.log('foo');
-    //     callBack1(function(){
-    //         console.log('callBack回调函数');
-    //     });
-    // }
-    // foo(function(callBack2){
-    //     console.log('foo的回调函数')
-    //     callBack2();
-    // })
-
+        function foo(callBack1){
+        console.log('foo');
+        callBack1(function(){
+            console.log('callBack回调函数');
+        });
+        }
+        foo(function(callBack2){
+        console.log('foo的回调函数')
+        callBack2();
+        })
+           
         //回调函数就是异步程序
         //2 回调地狱；最难的就是不知道方法体中 callback执行的到底是哪个程序
         // console.log(callback)看一下到底执行的哪一个函数
@@ -48,7 +48,7 @@
         
         
         ///常见异步处理函数       回调函数
-        
+
     </script>
 </body>
 

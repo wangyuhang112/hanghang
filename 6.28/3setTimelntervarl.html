@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 计时器
+        // 每隔多少毫秒执行一次 回调函数
+
+        //注意 多次执行同一个setInterval 到底清空哪一个
+
+        // 出口：  
+        var x = 0;
+        //timer 表示每一个计时器的身份
+         var timer = setInterval(function(){
+            x++;
+            console.log('x')
+            if( x > 10 ){
+                //清空计时器 如果不清空计时器 导致页面性能特别差
+                //      -----
+                clearInterval(timer)  //清空最后一个技术器 
+            }
+        }, 500);
+        console.log(timer,'---');  //timer  形成多个 需要清空每日一个    
+        // console.log('565656565656565')
+        
+
+        //坑三  清最后一个timer 清了 3次
+        
+    </script>
+</body>
+</html>

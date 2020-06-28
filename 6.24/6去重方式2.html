@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,23,5,6,6,6,8,4,9]
+        // for(var i = arr.length;i>=0;i--){
+        for(var i = 0; i<arr.length;i++){
+            console.log(arr[i])
+            for(var j = i; j < arr.length;j++)
+            if(arr[i]===arr[i-1]){
+                //后面的项等于前面的项  删除其中的一项 注意arrlength变小了
+                // arr.pop()
+                // continue
+                arr.splice(j,1)
+                j--   //删除元素后 for 循环回退一步；如果没有j--就会漏掉一些数据
+            }
+            
+            
+        }
+        console.log(arr)
+    </script>
+</body>
+</html>

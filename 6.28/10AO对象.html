@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //foo 不执行没有AO
+        //AO{
+        //     c:undefined,
+        //     d:undefined,
+        //     a:undefined,
+        // }
+       function foo(){
+           var a = 0 ; 
+           var b = 12
+           b=12
+           function b(){
+
+           }
+       }
+
+    </script>
+</body>
+</html>
