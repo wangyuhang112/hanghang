@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 100;  
+  
+  function testResult(){   
+   
+        var b = 2 * a;    
+  
+        var a = 200;   
+   
+        var c = a / 2;  
+    
+        alert(b);  
+    
+        alert(c);  
+    
+  }    
+  
+//   testResult()
+  
+//      GO{}
+//      GO{
+//          a:undefined
+         
+//      }
+//      GO{
+//          a:undefinfed
+//          testResult:function
+//      }
+
+//      AO{}
+//      AO{
+//          a:undefined
+//          b:undefined
+//          c:undefined
+//      }
+
+
+//      ~~
+//      AO{
+//          a:undefined
+//          b:undefined
+//          c:undefined
+//      }
+
+//      AO{
+//          a:undefined            
+//          b:2*undefined --->NAN
+//          c:undefined
+//      }
+
+//      AO{
+//          a:200
+//          b:NAN
+//          c:undefined
+//      }
+//      AO{
+//          a:200
+//          b:NAN
+//          c:100
+//      }
+    </script>
+</body>
+</html>

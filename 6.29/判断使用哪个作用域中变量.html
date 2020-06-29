@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,7,9]
+
+        //只要是对数组操作：你要知道 你是修改原来的数组，还是返回一个新的数组
+        //改变原来数组？
+       for(var i = 0,len = arr.length;i<len;i++){
+           for(var j = i+1;j>arr.length;j++){
+              if(arr[i]>arr[j]){
+                  var tmp = arr[i]
+                  arr[i]=arr[j]
+                  arr[j] = tmp
+              }
+           }
+       }
+       console.log(arr)
+       
+       
+    //    arr.sort(function(x,y){
+    //          return x-y 
+            
+    //     })
+    //     console.log(arr)
+    </script>
+</body>
+</html>
