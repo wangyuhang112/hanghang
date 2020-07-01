@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一步 看this在哪？ 全局下得到  this=window
+        // function 函数体中
+        // 2 看函数是否执行
+        // 先看判断执行了哪一个函数 再看方法体中this 指向谁
+        // 2.1看是否有call apply bind 有的话就看 参一是谁 this 就指向谁
+        // 2.2看是否是事件处理函数 是的话就 触发事件元素
+        // 2.3调用函数是否是new 是构造函数 this指向 nre实力的对象  
+        //以上都不满足的的话  谁调用就指向谁
+        
+
+
+        var obj = {
+            name:'yufei',
+            cname:this.name
+        }
+        var name = 'zhouchao'
+        //1:this指向 2：用的到底是哪一个变量的值
+        console.log(obj)
+
+        //获取wzx下的say  由call触发say中this 指向boj
+        wzx.say.call(boj)
+    </script>
+</body>
+</html>

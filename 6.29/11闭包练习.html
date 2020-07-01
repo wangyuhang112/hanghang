@@ -7,24 +7,87 @@
 </head>
 <body>
     <script>
-        (function(window){
-            var num  = 0 
-            //foo  是window属性 全局  foo存的为指针
-            window.foo = function (){
-                //全局函数访问 私有的 立即执行函数 num
-                var count = 0;
-                return function bar(){
-                    console.log(count++)
-                }
-            }
-        })(window);
-        var bar = foo();
-        bar()
-        bar()
-        console.log(bar)
-        var c = foo()
-        c()
-        c()
+        // (function(window){
+        //     var num  = 0 
+        //     //foo  是window属性 全局  foo存的为指针
+        //     window.foo = function (){
+        //         //全局函数访问 私有的 立即执行函数 num
+        //         var count = 0;
+        //         return function bar(){
+        //             console.log(count++)
+        //         }
+        //     }
+        // })(window);
+        // var bar = foo();
+        // bar()
+        // bar()
+        // console.log(bar)
+        // var c = foo()
+        // c()
+        // c()
+
+//         for (var i = 0; i < 3; i++) {
+//     setTimeout(function () {
+//         console.log(i);
+//     }, 0);
+//     console.log(i);
+// }
+
+// for (let i = 0; i < 5; i++) {
+//     setTimeout(function () {
+//         console.log('delayer:' + i)
+//     }, 0)
+// }
+
+(function() {
+    var num = 1;
+    var e = {};
+    function add(num) {
+        return num++;
+    }
+    e.getAddNum = function () {
+        return add(num);
+    }
+    window.a = e
+} )()
+console.log(a.getAddNum());
+console.log(a.getAddNum());
+
+// var add = (function () {
+//     var counter = 0;
+//     return function () {
+//         return counter += 1;
+//     }
+// })();
+// add();//1
+// add();//2
+
+// (function() {
+//     var num = 1;
+//     var e = {};
+//     function add(num) {
+//         return num++;
+//     }
+//     e.getAddNum = function () {
+//         return add();
+//     }
+//     window.a = e
+// } )()
+
+// console.log(a.getAddNum());
+// console.log(a.getAddNum());
+// function f1() {
+//     var n = 999;
+//     nAdd = function () { n += 1 }
+//     function f2() {
+//         alert(n);
+//     }
+//     return f2;
+// }
+// var result = f1();
+// result();//999
+// nAdd();//999
+// result();//1000
     </script>
 </body>
 </html>

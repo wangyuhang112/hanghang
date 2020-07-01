@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //递归  函数内部调用自己
+        // var count = 0;
+        // function foo(){
+        //     console.log()
+        //     foo()
+        // }
+        // foo()
+        //做递归   1：找规律(数学公式)  2:找出口
+
+        //求1+2+3+4+5+6+7+8+9+10
+        // var count = 0;
+
+        // function foo(){
+        //     //当count>10  结束
+        //     if(count>10){
+        //         return
+        //     }
+        //     console.log(++count)
+        //     foo()
+        // }
+
+
+        //要求:1+2+3+4+5+6+....10的和 用递归
+
+
+        
+        function sum (n){
+            n +=(n+1)
+            return sum()
+        }
+
+    </script>
+</body>
+</html>
