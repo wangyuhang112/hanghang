@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // //变量或属性key 赋值js基本类型数据   存的是数据
+        // //变量或属性key 赋值引用类型数据     存的是指针
+        // var obj = {
+        //     name: 'yh',
+        //     list:[]
+        // }
+        // var res = {}
+        // //xxx.xx.xx   点左边的赋都是对象     xx本身类型都是字符串
+        // for(var x in obj){
+        //     res.x = obj[x]
+        // }
+        // console.log(res)
+
+
+
+        // function copyObject(){
+        // if(arguments.length==0){
+        //     throw new Error ('arguement.length can not zoro')
+        // }
+        // if(arguments.length > 1){
+        //         throw new Error('')
+        //     }
+        //     if(!Array.form(arr)){
+        //         throw new Error()
+        //     }
+        // }
+        // var res = {}
+        // forxc
+        // copyObject({
+        //     name:'周超',
+        //     age:21
+        // })
+
+        // function copyArray(arr){
+        //     if(arguments.length == 0){
+        //         throw new Error('')
+        //     }
+        //     if(arguments.length > 1){
+        //         throw new Error('')
+        //     }
+        //     if(!Array.form(arr)){
+        //         throw new Error()
+        //     }
+        //     var res = [];
+        //     for(var i = 0,len=arr.length){}
+        // }
+            
+        // copy 拷贝数组或者对象 并返回结果
+
+        function copy(param){
+            //如果参数为数组就进行对象的单层拷贝
+            if(Array.form(param)){
+                var res = [];
+                for(var i = 0,len = param.length;i<len;i++){
+                    res.push(param[i]);
+                }
+            }
+            return res;
+
+        }
+        var res = copy({name:'宇航'});
+        var res1 = copy([1,2,3,4,5,6])
+        console.log(res)
+        console.log(res1)
+    </script>
+</body>
+
+</html>

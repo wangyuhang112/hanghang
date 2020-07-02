@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:'周超',
+            list:[{
+                name:'于飞'
+            },{
+                name:'gukun',
+                say:'nenne'
+            }]
+        }
+        
+        //deepCopy 实现的是数组或者对象的深层拷贝
+        // 递归深拷贝
+        //1 需要考虑  每次拷贝的数 是数组或者对象 不确定改符合处理
+        //   
+        function deepCopy(params){
+            if(Array.isArray(params)){
+                //如果是数组 
+                var res = []
+                for(var i = 0;i<params.length;i++){
+                    
+                    if(params[i] instanceof Object){
+                        //将深层
+                        res.push(deepCopy(params[i]))
+                    }else{
+                    res.push(param[i]);
+                     
+                    }
+                }
+                return res;
+            }
+            //如果是对象
+            if(params.constructor === Object ){
+                var res = {}  //声明空对象
+                for(var x in params){
+                    if(params[i] instanceof Object){
+                        res[x] = deepCopy(params[i])
+                    }else{
+                        res[x] = params[x]
+                     
+                    }
+                   
+                    //res[x]   表示数组独享
+
+                }
+                return res
+            }
+        }
+        var res = deepCopy(obj);
+
+        console.log(res)
+        console.log(obj)
+
+
+
+        /// 未来面试题  考察代码  js基础逻辑问题
+        //赋值  逻辑  递归  if for 方法封装   综合掌握度
+        //如何写与数据类型有关的判断表达式？
+    </script>
+</body>
+</html>
