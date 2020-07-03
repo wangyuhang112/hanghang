@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 1, 2, 3,555555]
+        flas = false
+        var obj = {}
+        for (var i = 0; i < arr.length; i++) {
+            for (var x in obj) {
+                if (arr[i] === x) {
+                    flas = true
+                    break
+                } else {
+                    flas = false
+                }
+            }
+        }
+        if(!flas){
+            obj[arr[i]] = 0;
+        }
+
+        for(var x in obj){
+            for(var j =0;j<arr.length;j++){
+                if(x ===arr[i]){
+                    ++obj[x]
+                }
+            }
+        }
+        console.log(obj);
+        var max = 0;
+        var maxkey = '';
+        for(var z in obj){
+            if(max<obj[z]){
+                max=obj[z];
+                maxkey = z;
+            }
+        }
+        console.log(maxkey,max)
+    </script>
+</body>
+
+</html>

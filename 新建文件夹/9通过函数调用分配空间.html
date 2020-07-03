@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //有些函数通过调用来对象分配
+        var date = new Date() // date  通过调用Date 函数给日期对象分配空间
+
+        var str = '32121'
+        var subStr = str.substr(0, 4);//sub 是一个新的字符串
+        //使用值
+        //往内存中写入变量或者对象下属性 并赋值
+        // 读的是内存中的数据
+        // 使用值的过程实际上是对分配内存进行读取与写入的操作。读取与写入可能是写入一个变量或者一个对象的属性值，甚至传递函数的参数。
+
+
+        //垃圾回收器 关注的内存分配和使用发过程  对于已经分配的并且不再使用发内存进行释放
+    </script>
+</body>
+
+</html>

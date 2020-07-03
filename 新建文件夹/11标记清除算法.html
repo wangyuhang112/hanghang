@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ///清空闭包缓存
+        function foo(){
+            var a = 0;
+            return function(){
+                console.log(++a)
+            }
+        }
+        // 在res执行是时候需要引用AI对象下的a属性 
+        // 所以foo发AO对象不会被回收
+        var res = foo()  //因为res引用的return返回的函数
+        res();
+        res();
+        //找到不用的条件后 清空     当闭包完成任务条件然后清空res 那么foo的AO对象就不会再被引用
+        //所以实现了清空闭包的缓存
+        res = null
+        //foo中的AO 会被回收
+        foo()()//没有任何变量和属性 引用return 返回的函数所以ao回收
+    </script>
+</body>
+</html>
