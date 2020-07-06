@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .size{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+    </div>
+    <script>
+        var wrap = document.getElementsByClassName('wrap')[0];
+        console.log(wrap.className)
+        wrap.className = 'size';
+        console.dir(wrap)
+        //className 返回的类名字符串  classList 返回的是类名数组
+        ///classlist   添加类名   从而添加css样式
+
+        
+    </script>
+</body>
+</html>
