@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="prent">
+        <div class="box2">
+            gfg
+        </div>
+        <div class="box">
+            <span>neirong</span>
+            <p>段落</p>
+            <div>容器</div>
+        </div>
+    </div>
+    <script>
+        //root  根节点
+        var box = document.getElementsByClassName('box')[0];
+        console.log(box.nodeName)   ///DIV获取节点名字
+        console.dir(box)
+        var boxPrent = box.parentNode
+        console.log(box.parentNode)//返回父节点
+        var boxPre = box.previousElementSibling;
+        console.log(boxPre);
+        var boxNext = box .nextElementSibling;
+        console.log(boxNext);
+
+        //综上 
+        //第一步 通过js选择器 获取当前html标签
+        //第二步  通过节点关系 获取相关的元素（父元素 子元素 兄弟元素）
+    </script>
+</body>
+</html>

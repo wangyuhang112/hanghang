@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>我本宇少 无限嚣张</h1>
+    <h1>我本宇少 无限嚣张</h1>
+    <h1>我本宇少 无限嚣张</h1>
+    <h1>我本宇少 无限嚣张</h1>
+    <h1>我本宇少 无限嚣张</h1>
+    <script>
+        // var h1s = document.getElementsByTagName('h1')
+        // for (var i = 0, len = h1s.length; i < len; i++) {
+        //     console.log(h1s[i]);
+        //     h1s[i].onclick = function () {
+        //         //btn[i] 不存在 因为异步 这里程序比全局for还慢 所以全局的i=5
+        //         console.log(i, this);
+        //         ///需求 找到被点击的元素
+        //         this.style.color = 'yellow';
+        //     }
+        // }
+
+        // var h1s = document.getElementsByTagName('h1')
+
+        // for (var i = 0; i < h1s.length; i++) {
+        //     console.log(i);
+
+        //     (function () {
+        //         var flag = true;
+        //         var x = i                //解决变量污染 全局i= 5 的问题
+        //         h1s[i].onclick = function () {
+        //             flag ? (h1s[x].style.color = 'yellow') : (h1s[x].style.color = 'blue');
+        //             flag = !flag;
+        //             // console.log(i,this)
+        //         }
+        //     })()
+        // }
+        // console.log(i)
+
+
+        //给对象添加私有属性的方式   没有闭包
+        var h1s = document.getElementsByTagName('h1')
+
+        for (var i = 0; i < h1s.length; i++) {
+            console.log(i);
+
+            (function () {
+                h1s[i].flag = true;
+                //给5个h1dom对象分别添加是由属性i 并赋不同的初始值
+                       h1s[i].i=i;
+                h1s[i].onclick = function () {
+
+                    //对象下 私有属性 i
+
+                    this.flag ? (h1s[this.i].style.color = 'yellow') : (h1s[this.i].style.color = 'blue');
+                    this.flag = !this.flag;
+                   
+                }
+            })()
+        }
+        console.log(i)
+
+    </script>
+</body>
+
+</html>

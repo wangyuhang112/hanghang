@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li{
+            list-style: none;
+            width: 300px;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: whitesmoke;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            
+            <p>内容</p>
+            <button>按钮</button>
+        </li>
+        <li>
+            
+            <p>内容</p>
+            <button>按钮</button>
+        </li>
+        <li>
+            
+            <p>内容</p>
+            <button>按钮</button>
+        </li>
+        <li>
+            
+            <p>内容</p>
+            <button>按钮</button>
+        </li>
+        <li>
+            
+            <p>内容</p>
+            <button>按钮</button>
+        </li>
+        
+    </ul>
+    <script>
+        var btn = document.querySelectorAll('li>button');
+        console.log(btn)
+        for(var i= 0;i<btn.length;i++){
+            (function(){
+                var x = i;
+                btn[x].onclick = function(){
+                    //点击button删除li
+                    //通过button 获取父节点li
+                    var parent=btn[x].parentNode
+                    console.log(parent)
+                    //删除li
+                    parent.remove()
+                }
+            })()
+        }
+    </script>
+</body>
+</html>
