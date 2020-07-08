@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 400px;
+            height: 300px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <script>
+        
+        //监听鼠标再整个浏览器中移动范围
+        // document.onmousemove = function(){
+        //     console.log('一定')
+        // }
+        // //监听某个元素  鼠标移动的情况
+        // wrap.onmousemove = function(){
+        //     console.log('sadf')
+        // }
+        //问题  document 和wrap 都监听了
+
+
+        // wrap.onmouseenter = function(){
+        //     console.log('sdf ')
+        // }
+        // wrap.onmouseenter = function(){
+        //     console.log('qer ')
+        // } 
+        document.onkeydown = function(){
+            console.log('asdfsdfas')
+        }
+        document.onkeyup = function(){
+            console.log('qweweq')
+        }
+        document.onkeypress = function(){
+            console.log('qweweq')
+        }
+    </script>
+</body>
+</html>

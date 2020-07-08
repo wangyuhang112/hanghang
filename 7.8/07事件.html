@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 第一种绑定事件的方式 -->
+    <h1 onclick="this.innerHTML= 'meishi'"> what  are you doing</h1>
+    <h2 onclick="yu(this)">我本宇少</h2>
+    <h3 class="yuhang">呵呵呵呵呵</h3>
+    <h4 class="hang">666666</h4>
+    <script>
+        
+        //事件 作用   用户和浏览器的交互行为
+        //事件分类  键盘  鼠标 滚动 浏览器 窗口 表单。。
+        //交互  ：一问一答   一行为 一响应  用户做出行为 浏览器反应对应的效果
+        //核心知识点(面试)：事件对象 事件机制 事件流 ： 监听事件。。。
+
+        // window。onload  当页面刚刚启动的时候
+        // window.onload = function(){
+        //     //事件处理函数     做一些初始化操作
+        //     alert('你好 我是宇少   这里完成页面初始化渲染')
+        // }
+        function yu(el){
+
+            el.innerHTML = '无限嚣张'
+        }
+        var txt = document.querySelector('.yuhang')
+        //onclick 点击事件
+        txt.onclick = function(){
+            //事件处理函数： 处理用户行为  浏览器对行为做出的响应
+            this.innerHTML = 'baby'
+        }
+        var text = document.querySelector('.hang')
+        //IE 不支持
+        text.addEventListener('click',function(){
+            this.innerHTML = '555555'
+        })
+    </script>
+</body>
+</html>
