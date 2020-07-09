@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>写调查报告</h1>
+    <form action="">
+        <div>
+            <label for="">姓名</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="">年龄</label>
+            <select name="" id="select">
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+            </select>
+        </div>
+        <div>
+            <label for="">aihao</label>
+            <input type="text" id="aihao">
+        </div>
+        <div>
+            <input type="radio" name ='sex' value = '男'>男
+            <input type="radio" name ='sex' value = '女'>女
+        </div>
+        <div>
+            <button class="sybmit">提交</button>
+        </div>
+    </form>
+    <script>
+        var sumbit = document.querySelector('.submit')
+        var select = document.querySelector('#select')
+        var love = document.querySelector('#aihao');
+
+        sumbit.onclick =function(e){
+            e.preventDefault()
+            var name = name.value;
+            var selects = '';
+            for(var i =0;i<select.length;i++){
+                if(select[i].selected){
+                    selecrs = select[i].value
+                    break
+                }
+            }
+            var love = love.value;
+            for(var j =0;j<radio.length;j++){
+                if(radio.checked){
+                    sex = radio[j].value
+                }
+            }
+            console.log(name ,selects,love,sex);
+            //
+        }
+    </script>
+</body>
+</html>

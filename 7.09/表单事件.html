@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+
+    </form>
+      <div>
+          <input type="text" id="ipt">
+          <h1></h1>
+      </div>
+      <div>
+          <input type="text " id="check">  
+      </div>
+    <script>
+        // var form = document.querySelector('form');
+        // form.onsubmit = function(e){
+        //     //阻止浏览器默认行为
+        //     e.prenentDefault()
+        //     console.log(e,'提交了');
+        //     console.log(form[0].value);
+            
+        // }
+        // var btn = documment.querySelector('button')
+        // btn.onclick =function(){
+             
+        // }
+        //给输入框绑定change 事件 
+        // 内容变化 并且失去焦点的时候触发
+           var ipt= document.querySelector('#ipt');
+           ipt.onchange = function(e){
+               console.log(e.target.value);
+               
+           }
+
+
+
+        //    var h1 = document.querySelector('h1')
+        //    //input事件 可以实时监听input 输入框的动态
+        //    ipt.oninput = function(){
+        //        console.log(ipt.value);
+        //        h1.innerHTML = ipt.value;
+               
+        //    }
+        //    //change 事件 当input发生改变触发
+        //    var check = document.querySelector('#check');
+        //    check.onchange = function(e){
+        //     console.log('check')
+        //     console.log(e.target.checked);
+            
+        //    }
+        
+    </script>
+</body>
+</html>

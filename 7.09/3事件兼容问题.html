@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn"></button>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function(e){
+            //1  事件兼容性
+            var event = e || window.event   //解决兼容性
+            console.log(e);
+            
+            console.log(event);
+            
+        }
+        //2 阻止浏览器默认行为
+        function prenentDefalut(e){
+            var e = e||window.enent;
+            if(e.preventDefalut){
+                evevt.prenentDefalut();
+            }else{
+                event.returnValue = false;
+            }
+        }
+        btn.onclick = function(e){
+            preventDefalut(e)
+        }
+        
+        //3.阻止事件冒泡
+        function stop(){
+           function stopPropergation(e){
+               var event = e || window.event;
+               if(event.stopPropergation){
+                event.stop
+               }
+           } 
+        }
+
+        //js 如何解决兼容性问题  
+        //4 事件监听的封装
+         function eventListener(el,event,type){
+             if(el.addEventListeber){
+                 el.addEventListener(event,callback,type)
+             }else{
+                 //ie8 版本不支持
+                 el.attachEvent(event ,callback);
+             }
+         }
+         eventListener(btn,'click',function(e){
+             {
+                 console.log('点击事件执行了');
+                 
+             }
+         })
+         //删除事件句柄的兼容性处理
+         function removeEvent(el,eventName,eventFun){
+             if(arguments.length === 0){
+                 return null 
+             }
+             if(el.removeEventListener){
+                 el.removeEventListener(eventName,eventFun)
+             }else{
+                 el.datachEvent(eventName,eventFun)
+             }
+         }
+    </script>
+</body>
+</html>

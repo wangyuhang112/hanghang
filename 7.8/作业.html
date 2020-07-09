@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,29 +10,52 @@
             margin: 0;
             padding: 0;
         } */
-        .but{
+        .but {
             margin-top: 50px;
         }
     </style>
 </head>
+
 <body>
     <div class="wrap">
-       <button>红色</button>
-       <button>蓝色</button>
-       <button>黄色</button>
-       <button>绿色</button>
+        <button value="red">红色</button>
+        <button value="blue">蓝色</button>
+        <button value="yellow">黄色</button>
+        <button value="green">绿色</button>
     </div>
-    <button class="but">点击这个变色</button>
-    <h1>我会变色</h1>
+    <button class="but"  value="color">点击这个变色
+
+    </button>
+    <h1 class="me">我会变色</h1>
     <script>
-    var buts = document.querySelectorAll('.wrap>button')
-    console.log(buts)
-    
-    var butt = document.querySelector('.but')
-    console.log(butt)
-    butt.onclick = function(){
-        
-    }
+        // var buts = document.querySelectorAll('.wrap>button')
+        // console.log(buts)
+
+        var butt = document.querySelector('.but')
+        var butts = document.querySelectorAll('.wrap>button')
+        // console.log(butts);//red
+
+        // console.log(butt)
+        // var values = document.querySelector('')
+        var h1s = document.querySelector('.me')
+        // console.log(h1s);
+        for (var i = 0; i < butts.length; i++) {
+             
+            console.log(butts[i].value);
+            (function () {
+                var k = i;
+                butts[k].onclick=function(){
+                    butt.onclick = function () {
+                    h1s.style.color = butts[k].value;
+
+                }
+                }
+
+               
+            })();
+        }
+
     </script>
 </body>
+
 </html>
