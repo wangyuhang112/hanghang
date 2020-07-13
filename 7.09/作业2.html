@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .clicks{
+            width: 100px;
+            height: 30px;
+            background-color: blueviolet;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .space{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background-color: red;
+            margin: 10% auto;
+            display: none;
+        }
+        #ipt{
+            width: 200px;
+            height: 10%;
+        }
+        .cancel{
+           width: 100px;
+           height: 90%;
+        }
+        .deter{
+            width: 100px;
+           height: 90%;
+        }
+        .yuh{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="clicks">点我出来</div>
+    
+    <div  class="space">
+        <input type="text"  id="ipt">
+        <div class="yuh">
+            <div class="cancel">取消</div>
+            <div class="deter">确定</div>
+        </div>
+        
+    </div>
+    <script>
+        var click = document.querySelector('.clicks')
+        var space = document.querySelector('.space')
+        var cancel = document.querySelector('.cancel')
+        var deter = document.querySelector('.deter')
+        click.onclick=function(){
+            space.style.display = 'block'
+        }
+        cancel.onclick=function(){
+            space.style.display = 'none'
+        }
+        deter.onclick=function(){
+            space.style.display = 'none'
+        }
+    </script>
+</body>
+</html>

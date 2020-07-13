@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+    <p>wwwww</p>
+</div>
+    <script>
+        
+
+        //触底： 
+        //页面高度 = 视图窗口高度 + 滚动条滚动高度---?d到底了
+        var wrap = document.querySelector('.wrap')
+        window.onscroll = function(){
+            var  h = innerHeight; //获取视图窗口高度
+            var scollTop = document.documentElement.scrollTop;
+            var pageH  =document.body.offsetHeight;
+            var data = [
+                '前端','JAVA'
+            ];
+            if(h + scollTop > pageH){
+                // alert('到底了')
+                
+                //bug  慢  再0.5s 内可以重复多次触底 -->解决方式  防抖
+                setTimeout(
+                    function(){
+                        for(var i =0;i<data.length;i++){
+                    var p = document.querySelector('p')
+                    p.innerHTML = data[i]
+                    console.log(p);
+                    wrap.appendChild(p);
+                }
+                    },0
+                )
+                
+            }
+        }
+    </script>
+</body>
+</html>

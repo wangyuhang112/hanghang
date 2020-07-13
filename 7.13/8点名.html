@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 70px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            line-height: 70px;
+            font-size: 18px;
+            font-weight: 900;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">点名了</div>
+    <button class="start">开始</button>
+    <button class="stop"> 停止</button>
+    <script>
+        var names = ['龙飞', '禹龙', '依林', '陈顺']
+        var box = document.querySelector('.box');
+        var start = document.querySelector('.start');
+        var stop = document.querySelector('.stop');
+
+
+        var timer;
+        var flag = true;   //开关 防抖
+        start.onclick = function () {
+            //用户多次点击开始 以第一次为主
+            if (flag) {
+                //多次点击保证timer  只是赋值一次
+                timer = setInterval(function () {
+                    var random = Math.floor(Math.random() * (names.length))
+                    box.innerHTML = names[random]
+                }, 10)
+            }
+            flag = false
+
+        }
+        stop.onclick = function () {
+            clearInterval(timer)
+            flag = true;
+
+        }
+
+        //bug 点击多次的时候不能清除timer
+        //网络性能优化
+        //防抖 截流
+        //防抖：多次点击按钮以第一次为主
+        //截流：多次点击按钮以最后一次为主--->购物车技术器
+    </script>
+</body>
+
+</html>

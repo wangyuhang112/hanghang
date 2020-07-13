@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./新建文件夹 (2)/font_dxq25ktba2e/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .iconfont {
+            font-size: 30px;
+        }
+
+        .text {
+            width: 100px;
+            height: 30px;
+            position: relative;
+
+        }
+
+        .text div {
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            display: none;
+
+        }
+
+        .show {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <i class="iconfont icon-xingxing"></i>
+        <i class="iconfont icon-xingxing"></i>
+        <i class="iconfont icon-xingxing"></i>
+        <i class="iconfont icon-xingxing"></i>
+        <i class="iconfont icon-xingxing"></i>
+    </div>
+    <div class="text">
+        <div class="show">特别差</div>
+        <div value>差</div>
+        <div value>一般</div>
+        <div value>好</div>
+        <div value>非常好</div>
+    </div>
+    <script>
+        var xing = document.querySelectorAll('.wrap>i')
+        // console.log(xing);
+        var evaluate = document.querySelectorAll('.text>div')
+        // console.log(evaluate);
+
+        for (var i = 0; i < xing.length; i++) {
+            (function () {
+                var x = i;
+                xing[x].onclick = function () {
+
+                    for (var j = 0; j < xing.length; j++) {
+                        evaluate[j].className = '';
+                        xing[j].style.color = '';
+
+                    }
+                    evaluate[x].className = 'show';
+                    xing[x].style.color = 'red';
+                    for (var z = 0; z < x; z++) {
+                        xing[z].style.color = 'red';
+
+
+                    }
+                    // switch(x){
+                    //     case 0:evaluate[x].className='show'; break;
+                    //     case 1:evaluate[x].className= 'show'; break;
+                    //     case 2:evaluate[x].className= 'show'; break;
+                    //     case 3:evaluate[x].className= 'show'; break;
+                    //     case 4:evaluate[x].className= 'show'; break;
+                    // }
+
+                }
+            })();
+        }
+    </script>
+</body>
+
+</html>

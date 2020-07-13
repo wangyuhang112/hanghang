@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <input type="checkbox" class="all">全选
+            <input type="checkbox" class="reverse" >反选
+        </div>
+
+        <div><input type="checkbox" class="check"><span>内容</span></div>
+        <div><input type="checkbox" class="check"><span>内容</span></div>
+        <div><input type="checkbox" class="check"><span>内容</span></div>
+        <div><input type="checkbox" class="check"><span>内容</span></div>
+        <div><input type="checkbox" class="check"><span>内容</span></div>
+
+    </form>
+    <script>
+        var ipts = document.querySelectorAll('.check')
+        var reverse = document.querySelector('.reverse')
+        var all = document.querySelector('.all')
+        // ipts = Array.form(ipts);
+        ipts.forEach(function (item) {
+            item.addEventListener('change', function () {
+                var span = item.nextElementSibling;
+                if (item.checked) {
+                    spasn.style.color = 'blue';
+                } else {
+                    span.style.color = '';
+                }
+
+            })
+        })
+        all.addEventListener('change', function () {
+            console.log(all.checked);
+            //如果选中全选 选择项目 全部被选中 文字变为全不选
+            if (all.checked) {
+                ipts.forEach(function (item) {
+                    item.checked = true;
+                    item.nextElementSibling.style.color = 'blue';
+                    allMsg.innerHTML = '全不选'
+                }
+                )
+                for (var i = 0; i < ipts.length; i++) {
+
+                }
+            }
+
+        })
+        //反选
+        var flag = false; //true 选中反选   false 表示选中反选
+        reverse.addEventListener('change',function(){
+            flag=!flag;
+            ipts.forEach(function(item){
+               item.checked = !item.checked;
+               if(item.checked){
+                  item.nextElementSibling.style.color = 'blue';
+
+               }else{
+                   item.nextElementSibling.style.color = '';
+               }
+            })
+        })
+    </script>
+</body>
+
+</html>

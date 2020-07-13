@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            padding: 50px 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    <p>天哪</p>
+    
+    <script>
+        //滚动条有关  
+        //pc  滚动加载更多，楼层滚动，滚动联动。。
+        //移动端   下拉刷新更多   上拉加载更多  滚动联动。
+
+        window.onscroll = function(e){
+            // console.log('开始了');
+           var h = document.documentElement.scrollTop || document.body.scrollTop;
+           console.log(h);
+            
+        }
+        //1.获取滚动条滚动的高度
+        //2.指定滚动调滚动到某一个位置
+        //3.结合动画实现一些效果
+    </script>
+</body>
+</html>
