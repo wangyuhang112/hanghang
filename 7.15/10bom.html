@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    BOM 窗口对象 
+    window
+    ifram式窗口
+    <!-- a 默认事件 跳转连接 并进行页面刷新
+    通过修改url 地址完成 连接跳转
+    -->
+    <a href="./a.html"></a>
+    <script>
+       //url  地址很重要  ***、
+       //如何通过js 获取url 地址信息？    location
+       console.log(location.href);
+       console.log(location.origin);
+       console.log(location.pathname);
+       ///
+       var urlObj = {
+           orgin :'',
+           ip:'',
+           params:{
+               name :'',
+               age
+           }
+       }
+       document.querySelector('a').onclick = function(){
+
+           location.href = './a.html';//重定向 从一个地址到另一个地址 
+       }
+       
+       
+        //window  是最大的对象
+        //不能通过window直接获取iframe 窗口中嵌入的页面内容
+    </script>
+
+</body>
+</html>

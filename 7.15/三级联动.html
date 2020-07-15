@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <select name="" id="pro"></select>
+        <select name="" class="city"></select>
+        <select name="" class="area"></select>
+    </form>
+    <script src="../7.14/area.js">
+
+    </script>
+    <script>
+        console.log(data);
+        var pro = document.querySelector('#pro');
+        var city = document.querySelector('.city');
+        var area = document.querySelector('.area');
+        
+        //初始化 遍历data   获取key 添加发哦pro中
+        for(var x in data){
+            var option =document.createElement('option')
+            option.innerHTML = x;
+            option.value = x;
+            pro.appendChild(option);
+        }
+        //初始化市
+        // console.log(pro[]);
+        var cityData = data[pro[0].value][0];
+        for(var j in cityData){
+            var options = document.createElement('option');
+            options.innerHTML = j;
+            options.value = j;
+            city.appendChild(options);
+        }
+        //初始化区
+        // console.log(city[0].value);
+        var areaData = cityData[city[0].value];
+        for(var i = 0; i < areaData.length;i++){
+            for(var z in areaData[i]){
+                var optionss = document.createElement('option');
+                optionss.innerHTML = z;
+                optionss.value = z ;
+                area.appendChild(optionss);
+            }
+        }
+        
+
+        pro.onchange = function(e){
+            console.log(pro.selectedIndex);
+            var option =pro[pro.selecteIndex];
+            console.log(option);
+            
+            
+        }
+    </script>
+</body>
+</html>

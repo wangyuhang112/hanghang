@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>跳转到B</button>
+    <script>
+        var str = 'a数据'
+        //从页面到b页面时候  需要将a中数据传入b中 ----》页面传值
+        //url传值     传少量的   字符串类型的数据
+        //sessionStorage
+        // localStorage
+    
+        var btn = document.querySelector('button')
+        btn.onclick = function(){
+            location.href = './b.html?str ='+str;
+        }
+        
+        var obj = {
+            username:'12',
+            password:'asdfasdf',
+            token:'qweerwea',
+            list:["lkj",132,789],
+        }
+        console.log(sessionStorage);
+        //1 a页面中往 sessionStorage 纯数
+        //2 其他页面中 sessionStorage 获取数据
+        btn.onclick =function(){
+
+        }
+        
+    </script>
+</body>
+</html>

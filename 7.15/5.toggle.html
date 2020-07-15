@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button>toggle</button>
+    <!-- 
+        box 的显示隐藏不确定
+     -->
+    <div class="box"></div>
+    <script>
+        // togg(box)    //如果box显示那么隐藏  如果隐藏那么显示
+        var btn = document.querySelector('button')
+        var box = document.querySelector('.box')
+        var flag = true;
+        btn.onclick = function(){
+           flag = !flag
+           if(flag){
+               box.style.display = 'block';
+           }else{
+               box.style.display = 'none';
+           }
+        }
+        console.log(getComputedStyle(box,null)['display']);
+        
+        function toggle(el){
+            var none = getComputedStyle(box,null)
+        }
+    </script>
+</body>
+</html>
