@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
+        .box {
             width: 100px;
             height: 100px;
             background-color: blue;
@@ -14,24 +15,65 @@
             line-height: 100px;
             text-align: center;
         }
+
+       
     </style>
 </head>
+
 <body>
     <div class="box">
         点我拖动
     </div>
     <script>
         var box = document.querySelector('.box');
-        box.onclick = function(){
-          
-            window.onmousemove = function(e){
+        // var flag = false;
+        box.onmousedown = function (event) {
+            // var flag = true;
+            var x = event.offsetX;
+            var y = event.offsetY;
+            window.onmousemove = function (e) {
                 // console.log(e.clientX);
+                //指哪点哪
+                // box.style.left = e.clientX - e.offsetX + 'px';
+
                 box.style.left = e.clientX - 50 + 'px';
-                box.style.top = e.clientY - 50 +'px';
-                
+                box.style.top = e.clientY - 50 + 'px';
+
             }
         }
+        box.onmouseup = function () {
 
+            window.onmousemove = function (e) {
+                // console.log(e.clientX);
+                box.style.left = e.offsetX;
+                box.style.top = e.offsetY;
+
+            }
+
+        }
+
+        var moveX = e.clientX - x;
+        var moveY = e.clientX - y;
+        if(moveX<=0){
+            moveX = 0
+        }
+        if(moveX>=innerWidth-150){
+            moveX = innerWidth-150
+        }
+        if(moveY<=0){
+            moveY = 0
+        }
+        if(moveY>=innerWidth-150){
+            moveY = innerWidth-150
+        }
+        box.style.left = moveX +'px';
+        box.style.top = moveY +'px';
+
+
+
+        //处理bug   鼠标移出边界后 鼠标移动事件的处理 没有取消
+        // if(e.clientX > innerWidth||e.clientY>innerHeight)
     </script>
 </body>
+
 </html>

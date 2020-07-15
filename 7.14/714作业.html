@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #provinces {
+            width: 92px;
+            height: 20px;
+            margin-left: 50px;
+        }
+
+        .city {
+            width: 92px;
+            height: 20px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <select id="provinces">
+
+    </select>
+    <select class="city">
+
+    </select>
+    <script src="./area.js" class="script"></script>
+    <script>
+        // console.log(data);
+        var pro_ele = document.querySelector('#provinces');
+        var city_ele = document.querySelector('.city');
+        var arr2 = [];
+        for (var i in data) {
+            var ele = document.createElement("option");
+            // console.log(ele);
+            ele.innerHTML = i;
+            pro_ele.appendChild(ele)
+            // console.log(data[i]);
+            for (var j =0 ;j<data[i].length; j++) {
+                // console.log(data[i][j]);  
+                var arr = []
+                for (var z in data[i][j]) {
+                    // console.log(z);
+                    arr.push(z);
+                }
+                // console.log(arr);
+                arr2.push(arr);
+            }
+        }
+        console.log(arr2);
+        
+
+        pro_ele.onchange=function () {
+            console.log(2)
+       var eles = document.querySelectorAll('#provinces>option');
+       console.log(eles);
+       
+           for(var x =0;x<eles.length;x++){
+            //    console.log(eles[x])
+            if(eles[x].selected){
+                city_ele.innerHTML = '';
+                
+                for(var n = 0;n<arr2[x].length;n++){console.log(arr2[x]);
+                
+                    var yy = document.createElement('option');
+                    yy.innerHTML = arr2[x][n];
+                    city_ele.appendChild(yy);
+                }
+                    
+            }
+
+           }
+
+        }
+
+    </script>
+</body>
+
+</html>

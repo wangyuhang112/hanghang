@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          opacity: 1;
+        }
+        /* .box:hover{} */
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+       var box  = document.querySelector('.box');
+    //    box.onmouseover = function(){
+    //        box.style.opacity = '0.3'
+    //        box.style.transition = 'all 1s'
+    //    }
+
+    //方式二
+    //  知道动画每次执行时间是多少
+    // css值 每次递增或者递减是多少？  单次执行的时间是多少
+    box.onmouseover = function(){
+        var opacity = 1;
+        var timer = setInterval(function(){
+            opacity -= 0.1
+            box.style.opacity=opacity;
+            if(opacity <=0.3){
+                box.style.opacity = 0.3;
+                clearInterval(timer);
+            }
+        },10)
+    }
+    
+    </script>
+</body>
+</html>

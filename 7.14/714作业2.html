@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        .clicks{
+
+        .clicks {
             width: 100px;
             height: 30px;
             background-color: blueviolet;
@@ -18,7 +20,8 @@
             text-align: center;
             line-height: 30px;
         }
-        .space{
+
+        .space {
             width: 200px;
             height: 200px;
             position: relative;
@@ -26,68 +29,56 @@
             margin: 10% auto;
             display: none;
         }
-        #ipt{
+
+        #ipt {
             width: 200px;
             height: 10%;
         }
-        .cancel{
-           width: 100px;
-           height: 90%;
-        }
-        .deter{
+
+        .cancel {
             width: 100px;
-           height: 90%;
+            height: 90%;
         }
-        .yuh{
+
+        .deter {
+            width: 100px;
+            height: 90%;
+        }
+
+        .yuh {
             display: flex;
         }
     </style>
 </head>
+
 <body>
     <div class="clicks">点我出来</div>
-    
-    <div  class="space">
-        <input type="text"  id="ipt">
+
+    <div class="space">
+        <input type="text" id="ipt">
         <div class="yuh">
             <div class="cancel">取消</div>
             <div class="deter">确定</div>
         </div>
-        
+
     </div>
     <script>
         var click = document.querySelector('.clicks')
         var space = document.querySelector('.space')
         var cancel = document.querySelector('.cancel')
         var deter = document.querySelector('.deter')
-        click.onclick=function(){
+        click.onclick = function () {
             space.style.display = 'block'
-        }
-        space.onmousedown = function(){
-        // var flag = true;
-            
-                window.onmousemove = function(e){
-                // console.log(e.clientX);
-                space.style.left = e.clientX - 700 + 'px';
-                space.style.top = e.clientY - 400 +'px';
-                
-            }
-        }
-        space.onmouseup =function(){
-            
-            window.onmousemove = function(e){
-                // console.log(e.clientX);
-                space.style.left = e.offsetX;
-                space.style.top = e.offsetY;
-                
-            }
             
         }
-        cancel.onclick=function(){
+
+        cancel.onclick = function () {
             space.style.display = 'none'
         }
-        deter.onclick=function(){
+        deter.onclick = function () {
             space.style.display = 'none'
         }
     </script>
 </body>
+
 </html>
