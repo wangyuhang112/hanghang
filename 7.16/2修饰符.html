@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var str = '美国人，日本人，韩国人';
+        // var reg = /['人']/;
+        // var reg1 = /['人']/g;
+ 
+        var str1 = 'qeeasdfsdfqewrsdsdef'
+        var str2 = `as/n
+        sfsdf
+        asdf
+        sadf
+        dfasdfdsf`
+        //问题    没有找到对行匹配的应用场景
+        var reg2 = /[qewradfzcv]/i;
+        console.log(str1.match(reg2));
+        console.log(str2.match(reg2));
+        
+        // i 忽略大小写
+        //全局匹配  在整个字符串中匹配 
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /[0-9]/g
+        var reg = /\d/g       //匹配0-9 字符
+        var reg = /[0-9a-zA-Z]/g  //数字字母下划线
+        var reg3 = /[\w]/g    //匹配数字
+        
+        var reg4 = /^\d[a-zA-Z]$/g  //仅能匹配字符长度为2  开头为数字 结尾是字母
+
+
+        var str = '3d'
+        var str2 = '4asdfasdf'
+        console.log(str.match(reg4))
+        console.log(str2.match(reg4))
+
+        // 必须以1开头 结尾无所谓 长度不限
+        var str = /^[1][^\s]{1,}/g
+        var str3 = 'afsdfds41'
+
+        // 手机号码  开头仅为1 结尾是长度为1 的字符 结果为11位数字
+        var reg5= /^1\d{10}$/g  //规定开头结尾是数字两个待匹配字符   第一个字符长度为1  第二个字符长度为10
+        var ip = '133465454453413453453';
+        console.log(ip.match(reg5));
+
+        // 边界类
+        var  reg6 = /\bis\b/g;     //单词界限
+        var str4 = '你说is不is啊'
+       
+        console.log(str4.match(reg6));
+        
+    </script>
+</body>
+</html>

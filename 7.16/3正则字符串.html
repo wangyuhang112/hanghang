@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //正则字符分为原义文本字符
+
+        var reg = /[a]/;
+        var reg1 = /[132465789]/g///匹配0-9字符串长度为1,可以得到多个结果
+        var reg2 = /[132456789]{1,5}/g;
+        console.log('45613213k2fg'.match(reg2));
+        
+    </script>
+</body>
+</html>

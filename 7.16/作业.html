@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #block{
+            /* width: 500px;
+            height: 300px; */
+            position: relative;
+            left: 40%;
+            top: 200px;
+        }
+        .time{
+            position: absolute;
+            font-size: 30px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="block">
+        <div class="time"></div>
+    </div>
+    <script>
+        window.onload = function () {
+            var go_time = new Date("2020/7/17 00:00:00");
+            //  countdown：倒计时
+            function countdown() {
+                var now_time = new Date();
+                var alltime = go_time.getTime() - now_time.getTime();  //总的时间（毫秒）
+                // console.log(alltime);
+                
+               
+                
+                var scend = parseInt((alltime / 1000) % 60);  //秒
+                //console.log(scend);
+                var minute = parseInt((alltime / 1000 / 60) % 60);  //  分钟
+                // console.log(minute);
+                var hour = parseInt((alltime / 1000 / 60 / 60) % 24);   //小时
+               
+                // console.log(month);
+                var btime = document.getElementById("block");
+                var time1 = document.querySelector(".time");
+                time1.innerHTML = ""  + hour +'-'+ minute + '-' + scend  
+                
+                setTimeout(countdown, 1);  //不加括号
+            }
+            countdown();
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date();
+        // console.log(data);
+
+        function formatData() {
+            //1 确定数据结构是什么
+            //2 获取具体的年月日  替换结构字符串
+            // console.dir(date);
+            var str = 'YYYY-MM-DD HH:FF:SS'
+
+            var time = {
+                'Y+': date.getFullYear(),
+                'M+': date.getMonth() + 1,
+                'D+': date.getDate(),
+                'H+': date.getHours(),
+                'F+': date.getMinutes(),
+                'S+': date.getSeconds()
+            }
+       
+        
+        for (var x in time) {
+            var reg = new RegExp(`(${x})`)
+            if (reg.test(str)) {
+                //把匹配到的内容替换为时间
+                // var res = str.replace(RegExp.$1, time[x])
+                var newVal = time[x] >=10?time[x]:'0'+time[x]
+                str = str.replace(RegExp.$1,newVal);
+               
+            }
+        }
+        console.log(res);
+        return str
+        }
+
+        var res = formatData(date)
+        console.log(res);
+
+    </script>
+    <script>
+        //新增需求 ：日期格式不确定
+        //2020-01-02 16：12：11
+        var date = new Date();
+        // console.log(data);
+
+        function formatData() {
+            //1 确定数据结构是什么
+            //2 获取具体的年月日  替换结构字符串
+            // console.dir(date);
+            var str = 'YYYY-MM-DD HH:FF:SS'
+
+            var time = {
+                'Y+': date.getFullYear(),
+                'M+': date.getMonth() + 1,
+                'D+': date.getDate(),
+                'H+': date.getHours(),
+                'F+': date.getMinutes(),
+                'S+': date.getSeconds()
+            }
+            
+            
+        for (var x in time) {
+            var reg = new RegExp(`(${x})`)
+            if (reg.test(str)) {
+                //把匹配到的内容替换为时间
+                // var res = str.replace(RegExp.$1, time[x])
+                var newVal = time[x] >=10?time[x]:'0'+time[x]
+                str = res.replace(RegExp.$1,newVal);
+               
+            }
+        }
+        console.log(res);
+        return res
+            }
+       var res =  formatDate(new Date(),'YYYY-MM-DD HH:FF:SS')
+       console.log(res);
+       
+    </script>
+</body>
+
+</html>
