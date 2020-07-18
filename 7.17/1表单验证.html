@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        form{
+            width: 300px;
+            position: absolute;
+            left: 30%;
+            top:30%;
+            transform: translate(-50%,-50%);
+            padding: 20px 15px;
+            box-shadow: 5px 5px 5px #cccccc;
+        }
+        .form-control{
+            width: 100%;
+            padding: 10px 5px ;
+        }
+        .form-control lable{
+            font-size: 14px;
+            color: blue;
+        }
+        .form-control input{
+            outline: none;
+            border:1px solid #cccccc;
+
+        }
+        .form-control p{
+            font-size: 12px;
+            text-align: left;
+            color: red;
+            padding-top: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="">用户名</label>
+            <input type="text" name="username"  id="username">
+            <p>请输入8-11位数字或者字符</p>
+        </div>
+        <div class="form-control">
+            <label for="">密码</label>
+            <input type="password" name="password" id="password">
+            <p>请输入8-12位数字或者字符</p>
+        </div>
+        <div>
+            <button class="login">登录</button>
+        </div>
+    </form>
+    <script>
+        var btn= document.querySelector('login');
+        var username = document.querySelector('#username')
+        var pssword = document.querySelector('password')
+
+        btn.onclick =function(e){}
+        e.perventDefaule()
+        var user = username.value;
+        var pass = password.value;
+        
+    </script>
+</body>
+</html>

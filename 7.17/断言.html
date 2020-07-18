@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'a';
+        //断言是  匹配字符的条件判断  断言不会匹配集体字符
+        
+
+        
+        //正则表达式匹配方式 从左往右
+        //前瞻   匹配字符的时候   ；还需要往右看看是否满足某个条件    也叫正向匹配
+        //  匹配的时候往左看看 叫负向匹配
+        
+        //字符串尾部叫前 字符串头部叫后
+
+        //  匹配re  但是不匹配开头的re  匹配单词内部的re
+        var str1 = 'regex represents regular expression'
+        var reg = /(?<=\w)re/g;
+        
+    </script>
+</body>
+</html>

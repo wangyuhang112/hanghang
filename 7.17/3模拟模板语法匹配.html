@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>{{msg}}</h1>
+    <div>{{name}}</div>
+    <p>{{age}}</p>
+    <h2>{{cc}}</h2>
+    <script>
+        var data = {
+            msg: '我说内容',
+            name: '小飞',
+            age: 12,
+            cc: 13
+        }
+
+        var h1 = document.querySelector('h1');
+        var div = document.querySelector('div');
+        var h1val = h1.innerHTML;
+        var divval = div.innerHTML;
+
+        // h1.innerHTML= h1val.replace(/\{\{(\w+)\}\}/,function(a,b,c){
+        //     console.log(a);
+        //     console.log(RegExp.$1);
+        //     return data[RegExp.$1]
+        // })
+
+        // div.innerHTML= divval.replace(/\{\{(\w+)\}\}/,function(a,b,c){
+        //     console.log(a);
+        //     console.log(RegExp.$1);
+        //     return data[RegExp.$1]
+        // })
+
+        // function replaceval(el){
+        //     var str = el.innerHTML;
+        //     el.innerHTML =str.replace(/\{\{(\w+)\}\}/,function(a,b,c){
+        //         for(var x in data){
+        //             if( x===RegExp.$1){
+        //                 return data[x]
+        //             }
+        //         }
+        //     })
+
+        // }
+        // replaceval(h1);
+        // replaceval(div)
+
+        function replace() {
+            var template = document.body.innerHTML;
+            console.log(template);
+            var res = template.replace(/\{\{\w+\}\}/g, function (a, b, c) {
+                console.log(a);
+                var reg = /\w+/g;
+                var newval = a.match(reg)[0]
+                console.log(a.match(reg)[0]);
+                // console.log(b);
+                for (var x in data) {
+                    if (x === newval) {
+                        return data[x]
+                    }
+                }
+
+            })
+            // console.log(res);
+            document.body.innerHTML = res;
+        }
+
+        replace(data)
+    </script>
+</body>
+
+</html>
