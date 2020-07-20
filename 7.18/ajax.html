@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ajax({method:'get',
+        data:{page:1},
+        url:'www.baidu.com',
+        success:function(data){
+            console.log(data);
+            
+        },
+        error:function(){
+            console.log(err);
+            
+        },
+        async:true
+    })
+    // ajax  (options) 发送http请求
+    //option |object
+    //@method  |string  表示请求方式
+    //@data   |object   表示请求参数
+    //@url   |string 表示请求地址
+    //@success  |function  表示请求失败后 如何处理响应数据
+    //@error   |function  表示请求事变 如何处理失败情况
+    //@async  |boolean  表示请求的程序 是同步还是异步的
+        function ajax(option){
+           //实例化对象
+            var xhr = new XMLHttpRequest();
+              //获得需要的数据 方法 地址 参数  callback
+            var {method,data,url,success,error} = option;
+            // console.log();
+            // xhr.open('open',);
+            // xhr.send()
+            //发送请求 分四个步骤
+            if(mathod==='get'||mathod==='GET'){
+                //发送git请求
+                //处理请求地址 和请求参数
+                    url = url+'?';
+                    for(var x in data){
+                        var url1 = url +`${x}=${data[x]}$` 
+                        console.log(url1);
+                         
+                    }
+                    url = url.slice(0,url.length-1);
+                    // 以上为处理 想要的nul  地址为www.badu.com?aa=1&pagr=1 --》url+data 处理
+                    xhr.open(mathod,url,async);
+                    xhr.send()
+            }
+            //处理响应
+            xhr.onreadystatechange = function(){
+               
+                if(xhr.readyState === 4 && xhr.status===200){
+                    //表示请求成功
+                    //获取响应数据
+                    var res = xhr.response
+                    //请求成功后：执行成功处理函数
+                    success(res);
+                }else{
+                    error(xhr)
+                }
+            }
+            // xhr.open()
+        }
+
+        if(mathod === 'post'||nathod==='POST'){
+            var xxx = '';
+            for(var x in data ){
+                xxx = xxx +`$[x]=${data[x]}$`
+            }
+            xxx =xxx.slice(0,url.length-1);
+            xxx.open(mathod,url,true)
+            xxx.send(data)
+
+        }
+    </script>
+</body>
+</html>
